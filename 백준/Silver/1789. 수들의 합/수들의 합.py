@@ -1,11 +1,8 @@
-s = int(input())
-total = 0
-count = 0
+S = int(input())
 
-while True:
-    count += 1
-    total += count
-    if total > s:
-        break
-
-print(count-1)
+s = 0
+index = 0
+while s <= S:
+    index += 1
+    s += index
+print(index-1)
