@@ -9,10 +9,5 @@ answer = []
 while(queue):
     queue.rotate(-K+1)
     n = queue.popleft()
-    answer.append(*n)
-print('<', end='')
-for i in range(N-1):
-    print(answer[i], end='')
-    print(', ', end='')
-print(answer[-1], end='')
-print('>')
+    answer.append(str(*n))
+print('<', ', '.join(answer), '>', sep='')
