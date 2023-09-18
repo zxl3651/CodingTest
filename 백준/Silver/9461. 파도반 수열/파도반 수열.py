@@ -2,20 +2,16 @@ import sys
 
 input = sys.stdin.readline
 
-def wave(n):
+T = int(input())
+P = [0 for i in range(101)]
+def fib(n):
     if n == 1 or n == 2 or n == 3:
         return 1
-    if dp[n]:
-        return dp[n]
-    dp[n] = wave(n-2) + wave(n-3)
-    return dp[n]
+    elif P[n]:
+        return P[n]
+    else:
+        P[n] = fib(n-3) + fib(n-2)
+        return P[n]
 
-N = int(input())
-P = []
-for i in range(N):
-    P.append(int(input()))
-
-dp = [0] * 101
-dp[0], dp[1], dp[2] = 0, 0, 0
-for i in P:
-    print(wave(i))
+for i in range(T):
+    print(fib(int(input())))
